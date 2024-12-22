@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 1</title>
+
+</head>
+
+<body>
+    <h1>Список товаров</h1>
+    <ul class="products">
+        <!-- Список товаров будет сгенерирован здесь -->
+    </ul>
+    
+    <script>
+        const products = ["Мышка", "Клавиатура", "Наушники"];
+        
+        const newProducts = ["Монитор", "Принтер", "Флешка"];
+    
+        products.push(...newProducts);
+    
+        const productList = document.querySelector(".products");
+    
+        function renderProducts() {
+            productList.innerHTML = "";
+    
+            products.forEach(product => {
+                const listItem = document.createElement("li");
+                listItem.textContent = product;
+                productList.appendChild(listItem);
+            });
+        }
+    
+        renderProducts();
+    </script>
+</body>
+
+</html>
